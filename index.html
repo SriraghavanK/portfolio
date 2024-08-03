@@ -18,14 +18,14 @@
     />
     <style>
       body {
-        font-family: 'Noto Serif Khitan Small Script',serif;
+        font-family: "Noto Serif Khitan Small Script", serif;
         background-color: #f0f4f8;
         font-size: 18px;
         color: #333;
       }
 
       .navbar {
-        background-color:  #27b8d2;
+        background-color: #27b8d2;
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -37,26 +37,33 @@
         font-weight: 600;
       }
 
+      /* Navbar link styling */
       .navbar-nav .nav-link {
         position: relative;
-        padding-bottom: 0.5rem; /* Adjust space for underline */
-        font-weight: 200;
-        color: #fff;
+        display: inline-block;
+        padding-bottom: 5px; /* Space for the underline */
+        text-decoration: none; /* Remove default underline */
       }
 
+      /* Underline effect */
       .navbar-nav .nav-link::after {
         content: "";
         position: absolute;
         left: 0;
         bottom: 0;
-        width: 0;
+        width: 100%;
         height: 2px; /* Thickness of the underline */
-        background-color: #f0f0f0; /* Color of the underline */
-        transition: width 0.3s ease-in-out; /* Adjust the duration for smoother effect */
+        background-color: #ffffff; /* Change to your preferred color */
+        transform: scaleX(0); /* Start with no underline */
+        transform-origin: bottom right;
+        transition: transform 0.3s ease; /* Smooth transition */
       }
 
-      .navbar-nav .nav-link:hover::after {
-        width: 100%;
+      /* Show underline on hover */
+      .navbar-nav .nav-link:hover::after,
+      .navbar-nav .nav-link.active::after {
+        transform: scaleX(1); /* Full underline on hover or when active */
+        transform-origin: bottom left;
       }
 
       .hero {
@@ -148,32 +155,6 @@
       .card:hover {
         transform: translateY(-10px);
         box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Adjust card size for mobile view */
-      @media (max-width: 767px) {
-        .card {
-          flex: 1 1 100%; /* Full width on mobile */
-          max-width: 100%;
-        }
-        #aboutCarousel {
-          position: relative;
-          min-height: 700px; /* Ensures a minimum height */
-        }
-
-        .carousel-control-prev {
-          left: 10px; /* Adjust position for mobile screens */
-        }
-
-        .carousel-control-next {
-          right: 10px;
-        }
-
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-          width: 60%;
-          height: 60%;
-        }
       }
 
       .footer {
@@ -270,7 +251,7 @@
         }
         #aboutCarousel {
           position: relative;
-          min-height: 900px; /* Ensures a minimum height */
+          min-height: 850px; /* Ensures a minimum height */
         }
 
         .carousel-control-prev {
@@ -287,6 +268,36 @@
           height: 60%;
         }
       }
+      @media (min-width: 681px) and (max-width: 768px) {
+        #aboutCarousel {
+          position: relative;
+          min-height: 900px; /* Ensures a minimum height */
+        }
+      }
+      @media (min-width: 451px) and (max-width: 680px) {
+        #aboutCarousel {
+          position: relative;
+          min-height: 1100px; /* Ensures a minimum height */
+        }
+      }
+      @media (min-width: 352px) and (max-width: 450px) {
+        #aboutCarousel {
+          position: relative;
+          min-height: 1300px; /* Ensures a minimum height */
+        }
+      }
+      @media (min-width: 301px) and (max-width: 351px) {
+        #aboutCarousel {
+          position: relative;
+          min-height: 1550px; /* Ensures a minimum height */
+        }
+      }
+      @media (min-width: 250px) and (max-width: 300px) {
+        #aboutCarousel {
+          position: relative;
+          min-height: 2150px; /* Ensures a minimum height */
+        }
+      }
 
       /* Adjust for larger screens */
       @media (min-width: 768px) {
@@ -297,7 +308,7 @@
         }
         #aboutCarousel {
           position: relative;
-          min-height: 590px; /* Ensures a minimum height */
+          min-height: 750px; /* Ensures a minimum height */
         }
 
         .carousel-item ul {
@@ -380,9 +391,8 @@
         }
       }
       section {
-  scroll-margin-top: 70px; /* Adjust this value to match the height of your fixed navbar */
-}
-
+        scroll-margin-top: 70px; /* Adjust this value to match the height of your fixed navbar */
+      }
     </style>
   </head>
   <body>
@@ -429,7 +439,8 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
-        <h1>Hello, I'm SRIRAGHAVAN K</h1><BR>
+        <h1>Hello, I'm SRIRAGHAVAN K</h1>
+        <br />
         <p>Web Developer | Tech Enthusiast | Gamer</p>
       </div>
     </section>
@@ -443,20 +454,40 @@
               <div
                 class="d-flex flex-column align-items-center text-center carousel-content"
               >
-                <h3>Professional Overview</h3><br>
-                
+                <h3>Professional Overview</h3>
+                <br />
+
                 <p>
-                  I am a dedicated web developer currently pursuing a Bachelor of Engineering in Computer Science and Engineering at Sri Muthukumaran Institute of Technology, with an expected graduation in 2025. My passion for technology is evident in my expertise in <i>HTML, CSS, and JavaScript</i>, and I am actively expanding my knowledge in backend technologies. My goal is to become a well-rounded full-stack developer, combining strong front-end skills with in-depth back-end expertise.
+                  I am a dedicated web developer currently pursuing a Bachelor
+                  of Engineering in Computer Science and Engineering at Sri
+                  Muthukumaran Institute of Technology, with an expected
+                  graduation in 2025. My passion for technology is evident in my
+                  expertise in <i>HTML, CSS, and JavaScript</i>, and I am
+                  actively expanding my knowledge in backend technologies. My
+                  goal is to become a well-rounded full-stack developer,
+                  combining strong front-end skills with in-depth back-end
+                  expertise.
                 </p>
                 <br /><br /><br />
                 <p>
-                  My enthusiasm for gaming fuels my creativity and enhances my problem-solving skills. With a solid foundation in both front-end and back-end technologies, I focus on creating responsive, user-friendly web applications that deliver exceptional user experiences. My hands-on experience with various projects has deepened my understanding of modern web development practices and honed my ability to tackle complex challenges. I am committed to continuous learning and staying at the forefront of the industry.
+                  My enthusiasm for gaming fuels my creativity and enhances my
+                  problem-solving skills. With a solid foundation in both
+                  front-end and back-end technologies, I focus on creating
+                  responsive, user-friendly web applications that deliver
+                  exceptional user experiences. My hands-on experience with
+                  various projects has deepened my understanding of modern web
+                  development practices and honed my ability to tackle complex
+                  challenges. I am committed to continuous learning and staying
+                  at the forefront of the industry.
                 </p>
               </div>
             </div>
             <div class="carousel-item">
-              <div class="d-flex flex-column align-items-center text-center carousel-content">
-                <h3>Education</h3><br>
+              <div
+                class="d-flex flex-column align-items-center text-center carousel-content"
+              >
+                <h3>Education</h3>
+                <br />
                 <ul>
                   <li>Maharishi Vidhya Mandir, Thanjavur, LKG to 1st Grade</li>
                   <li>SGBC Vivekananda Vidhyalaya, Minjur, 2nd to 7th Grade</li>
@@ -468,16 +499,24 @@
                     Engineering in Computer Science and Engineering (Expected
                     2025)
                   </li>
-                </ul><br>
-                
+                </ul>
+                <br />
+
                 <p>
-                  My educational journey has equipped me with a robust understanding of both foundational and advanced computer science concepts. Through rigorous coursework and hands-on projects, I have developed a deep grasp of programming principles, algorithms, and system architecture. This solid base enables me to tackle complex problems and implement innovative solutions effectively.
-              
+                  My educational journey has equipped me with a robust
+                  understanding of both foundational and advanced computer
+                  science concepts. Through rigorous coursework and hands-on
+                  projects, I have developed a deep grasp of programming
+                  principles, algorithms, and system architecture. This solid
+                  base enables me to tackle complex problems and implement
+                  innovative solutions effectively.
                 </p>
               </div>
             </div>
             <div class="carousel-item">
-              <div class="d-flex flex-column align-items-center text-center carousel-content">
+              <div
+                class="d-flex flex-column align-items-center text-center carousel-content"
+              >
                 <h3>Experience</h3>
                 <br />
                 <ul>
@@ -486,15 +525,26 @@
                   <li>Octanet, Web Development Internship (Current)</li>
                   <li>Codsoft, Web Development Internship (Current)</li>
                 </ul>
-                <br /><br>
+                <br /><br />
                 <p>
-                  During my internships, I acquired valuable hands-on experience in both front-end and back-end development. I engaged in real-world projects that required designing and implementing intuitive user interfaces, developing robust server-side applications, and working collaboratively with teams to produce high-quality software solutions. This practical experience honed my technical skills, improved my problem-solving abilities, and enhanced my capacity to contribute effectively to diverse development projects.
+                  During my internships, I acquired valuable hands-on experience
+                  in both front-end and back-end development. I engaged in
+                  real-world projects that required designing and implementing
+                  intuitive user interfaces, developing robust server-side
+                  applications, and working collaboratively with teams to
+                  produce high-quality software solutions. This practical
+                  experience honed my technical skills, improved my
+                  problem-solving abilities, and enhanced my capacity to
+                  contribute effectively to diverse development projects.
                 </p>
               </div>
             </div>
             <div class="carousel-item">
-              <div class="d-flex flex-column align-items-center text-center carousel-content">
-                <h3>Personal Interests</h3><br>
+              <div
+                class="d-flex flex-column align-items-center text-center carousel-content"
+              >
+                <h3>Personal Interests</h3>
+                <br />
                 <ul>
                   <li>
                     Gaming: Enthusiastic gamer with a knack for strategy and
@@ -515,64 +565,92 @@
                 </ul>
                 <br /><br />
                 <p>
-                  Outside of technology, I am passionate about gaming and sports. Gaming sharpens my strategic thinking and problem-solving skills, offering a creative outlet and a way to tackle complex challenges. Sports like cricket and football, on the other hand, enhance my teamwork and collaboration abilities while providing a healthy balance to my tech-focused lifestyle. Engaging in these activities helps me stay well-rounded and contributes to my overall personal and professional development.
+                  Outside of technology, I am passionate about gaming and
+                  sports. Gaming sharpens my strategic thinking and
+                  problem-solving skills, offering a creative outlet and a way
+                  to tackle complex challenges. Sports like cricket and
+                  football, on the other hand, enhance my teamwork and
+                  collaboration abilities while providing a healthy balance to
+                  my tech-focused lifestyle. Engaging in these activities helps
+                  me stay well-rounded and contributes to my overall personal
+                  and professional development.
                 </p>
               </div>
             </div>
             <div class="carousel-item">
-              <div class="d-flex flex-column align-items-center text-center carousel-content">
+              <div
+                class="d-flex flex-column align-items-center text-center carousel-content"
+              >
                 <h3>Future Goals</h3>
                 <p>
-                  Looking ahead, my primary goal is to advance as a full-stack developer with
-                  a robust expertise in C, C++, and Python. I am dedicated to honing my
-                  skills and leveraging these technologies to tackle complex problems and
-                  create innovative solutions. My ambition is to work with a leading
-                  technology company renowned for its contributions to the industry and
-                  commitment to cutting-edge developments. Companies such as Google, Microsoft,
-                  Amazon, or Apple represent the pinnacle of technological advancement and
-                  innovation, and I am excited about the prospect of contributing to their
-                  groundbreaking projects.
+                  Looking ahead, my primary goal is to advance as a full-stack
+                  developer with a robust expertise in C, C++, and Python. I am
+                  dedicated to honing my skills and leveraging these
+                  technologies to tackle complex problems and create innovative
+                  solutions. My ambition is to work with a leading technology
+                  company renowned for its contributions to the industry and
+                  commitment to cutting-edge developments. Companies such as
+                  Google, Microsoft, Amazon, or Apple represent the pinnacle of
+                  technological advancement and innovation, and I am excited
+                  about the prospect of contributing to their groundbreaking
+                  projects.
                 </p>
                 <p>
-                  I envision myself thriving in an environment that challenges me to
-                  continually grow and adapt. I aim to be part of a team that works on
-                  large-scale, impactful projects that address real-world issues and
-                  push the boundaries of what technology can achieve. Whether it's
-                  developing sophisticated software solutions, improving system
-                  architectures, or leading high-stakes projects, I am excited about the
-                  opportunity to make a significant contribution.
+                  I envision myself thriving in an environment that challenges
+                  me to continually grow and adapt. I aim to be part of a team
+                  that works on large-scale, impactful projects that address
+                  real-world issues and push the boundaries of what technology
+                  can achieve. Whether it's developing sophisticated software
+                  solutions, improving system architectures, or leading
+                  high-stakes projects, I am excited about the opportunity to
+                  make a significant contribution.
                 </p>
                 <p>
-                  In the long term, I aspire to take on leadership roles where I can
-                  influence strategic decisions, drive innovation, and mentor the next
-                  generation of developers. I am enthusiastic about exploring new
-                  technologies and methodologies that will shape the future of software
-                  development. My goal is to leave a lasting impact by contributing to
-                  transformative projects and becoming a key player in the tech industry
-                  on a global scale.
+                  In the long term, I aspire to take on leadership roles where I
+                  can influence strategic decisions, drive innovation, and
+                  mentor the next generation of developers. I am enthusiastic
+                  about exploring new technologies and methodologies that will
+                  shape the future of software development. My goal is to leave
+                  a lasting impact by contributing to transformative projects
+                  and becoming a key player in the tech industry on a global
+                  scale.
                 </p>
               </div>
             </div>
             <div class="carousel-item">
-              <div class="d-flex flex-column align-items-center text-center carousel-content">
+              <div
+                class="d-flex flex-column align-items-center text-center carousel-content"
+              >
                 <h3>Language Proficiency</h3>
                 <ul>
                   <li>
-                    <strong>Tamil:</strong> Fluent in Tamil with strong skills in reading, writing, and communication. This proficiency helps me engage effectively in various settings and collaborate within Tamil-speaking communities.
-                  </li><br>
+                    <strong>Tamil:</strong> Fluent in Tamil with strong skills
+                    in reading, writing, and communication. This proficiency
+                    helps me engage effectively in various settings and
+                    collaborate within Tamil-speaking communities.
+                  </li>
+                  <br />
                   <li>
-                    <strong>English:</strong> Fluent in English, with strong technical and professional communication skills. This allows me to excel in international environments, contribute to global projects, and stay current with industry trends.
-                  </li><br>
+                    <strong>English:</strong> Fluent in English, with strong
+                    technical and professional communication skills. This allows
+                    me to excel in international environments, contribute to
+                    global projects, and stay current with industry trends.
+                  </li>
+                  <br />
                   <li>
-                    <strong>Japanese:</strong> Basic familiarity with Japanese from watching anime. I am enthusiastic about learning more to deepen my cultural and linguistic knowledge.
-                  </li><br>
+                    <strong>Japanese:</strong> Basic familiarity with Japanese
+                    from watching anime. I am enthusiastic about learning more
+                    to deepen my cultural and linguistic knowledge.
+                  </li>
+                  <br />
                   <li>
-                    <strong>Future Language Learning:</strong> I am eager to learn additional languages to enhance my ability to work globally and connect with diverse teams.
+                    <strong>Future Language Learning:</strong> I am eager to
+                    learn additional languages to enhance my ability to work
+                    globally and connect with diverse teams.
                   </li>
                 </ul>
               </div>
             </div>
-                        
           </div>
           <a
             class="carousel-control-prev"
