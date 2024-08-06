@@ -199,7 +199,8 @@
 
       #aboutCarousel {
         position: relative;
-        min-height: 350px; /* Ensures a minimum height */
+        min-height: 420px; /* Remove fixed height to allow content-based height */
+  padding-bottom: 20px; /* Ensures a minimum height */
       }
 
       /* Ensure the carousel items are centered and use available space effectively */
@@ -241,158 +242,162 @@
         font-size: 1.5rem; /* Adjust pointer size */
         line-height: 1.5rem; /* Align pointer with text */
       }
+      
+      @media (max-width: 380px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 35px; /* Further adjusted width */
+    height: 35px; /* Further adjusted height */
+  }
 
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 60%; /* Adjusted icon size */
+    height: 60%; /* Adjusted icon size */
+  }
+
+  .carousel-control-prev {
+    left: 5px; /* Further adjusted left positioning */
+  }
+
+  .carousel-control-next {
+    right: 5px; /* Further adjusted right positioning */
+  }
+}
       /* Mobile view adjustments */
-      @media (max-width: 767px) {
-        .carousel-control-prev,
-        .carousel-control-next {
-          width: 40px; /* Adjust size for smaller screens */
-          height: 40px;
-        }
-        #aboutCarousel {
-          position: relative;
-          min-height: 850px; /* Ensures a minimum height */
-        }
+@media (max-width: 767px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 40px;
+    height: 40px;
+  }
 
-        .carousel-control-prev {
-          left: 10px; /* Adjust position for mobile screens */
-        }
+  #aboutCarousel {
+    min-height: 500px;
+  }
 
-        .carousel-control-next {
-          right: 10px;
-        }
+  .carousel-control-prev {
+    left: 10px;
+  }
 
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-          width: 60%;
-          height: 60%;
-        }
-      }
-      @media (min-width: 681px) and (max-width: 768px) {
+  .carousel-control-next {
+    right: 10px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 60%;
+    height: 60%;
+  }
+
+  .carousel-item ul li {
+    padding-left: 1rem;
+  }
+
+  .carousel-item ul li::before {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #aboutCarousel {
+    min-height: 450px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+    height: 50px;
+  }
+
+  .carousel-item .d-flex {
+    height: auto;
+    text-align: left;
+    padding: 40px;
+  }
+
+  .carousel-item ul {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+
+  .carousel-item ul li {
+    padding-left: 2.5rem;
+  }
+}
+@media (min-width: 352px) and (max-width: 450px) {
         #aboutCarousel {
           position: relative;
-          min-height: 900px; /* Ensures a minimum height */
-        }
-      }
-      @media (min-width: 451px) and (max-width: 680px) {
-        #aboutCarousel {
-          position: relative;
-          min-height: 1100px; /* Ensures a minimum height */
-        }
-      }
-      @media (min-width: 352px) and (max-width: 450px) {
-        #aboutCarousel {
-          position: relative;
-          min-height: 1300px; /* Ensures a minimum height */
+          min-height: 675px; /* Ensures a minimum height */
         }
       }
       @media (min-width: 301px) and (max-width: 351px) {
         #aboutCarousel {
           position: relative;
-          min-height: 1550px; /* Ensures a minimum height */
+          min-height: 700px; /* Ensures a minimum height */
         }
       }
       @media (min-width: 250px) and (max-width: 300px) {
         #aboutCarousel {
           position: relative;
-          min-height: 2150px; /* Ensures a minimum height */
+          min-height: 930px;/* Ensures a minimum height */
         }
       }
 
-      /* Adjust for larger screens */
-      @media (min-width: 768px) {
-        .carousel-item .d-flex {
-          height: auto; /* Allow content to adjust its height */
-          text-align: left; /* Align text to the left for larger screens */
-          padding: 40px; /* Increase padding for larger screens */
-        }
-        #aboutCarousel {
-          position: relative;
-          min-height: 750px; /* Ensures a minimum height */
-        }
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border: none;
+  z-index: 1050;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        .carousel-item ul {
-          text-align: left; /* Align text to the left */
-          margin: 0 auto; /* Center horizontally */
-          max-width: 80%; /* Set maximum width to fit well */
-        }
+.carousel-control-prev {
+  left: 15px;
+}
 
-        .carousel-item ul li {
-          padding-left: 2.5rem; /* Increase padding for larger screens */
-        }
-      }
+.carousel-control-next {
+  right: 15px;
+}
 
-      .carousel-control-prev,
-      .carousel-control-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 50px;
-        height: 50px;
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 50%;
-        border: none;
-      }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-      .carousel-control-prev {
-        left: 5px;
-      }
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
 
-      .carousel-control-next {
-        right: 15px;
-      }
+section {
+  scroll-margin-top: 70px;
+  margin-bottom: 40px;
+}
 
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon {
-        width: 100%;
-        height: 100%;
-      }
-
-      .carousel-control-prev:hover,
-      .carousel-control-next:hover {
-        background-color: rgba(0, 0, 0, 0.35);
-      }
-
-      .carousel-item p {
-        margin-bottom: 1.5rem; /* Adjust margin for consistent spacing */
-      }
-
-      .carousel-item ul {
-        margin-bottom: 1.5rem; /* Adjust margin for consistent spacing */
-      }
-
-      .carousel-item ul li {
-        padding-left: 1.5rem; /* Adjust padding for alignment */
-        margin-bottom: 0.5rem;
-        position: relative;
-      }
-
-      .carousel-item ul li::before {
-        content: "•"; /* Pointer symbol */
-        position: absolute;
-        left: 0;
-        color: #4a90e2; /* Pointer color */
-        font-size: 1.2rem; /* Adjust pointer size */
-        line-height: 1.2rem; /* Align pointer with text */
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 767px) {
-        .carousel-content {
-          padding: 10px; /* Adjust padding for mobile screens */
-        }
-
-        .carousel-item ul li {
-          padding-left: 1rem; /* Adjust padding for mobile screens */
-        }
-
-        .carousel-item ul li::before {
-          font-size: 1rem; /* Adjust pointer size for mobile screens */
-        }
-      }
-      section {
-        scroll-margin-top: 70px; /* Adjust this value to match the height of your fixed navbar */
-      }
+     
     </style>
   </head>
   <body>
@@ -447,210 +452,108 @@
 
     <section id="about" class="py-5">
       <div class="container">
-        <h2 class="section-heading text-center mb-4">About Me</h2>
+        <h2 class="section-heading text-center">About Me</h2>
         <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div
-                class="d-flex flex-column align-items-center text-center carousel-content"
-              >
-                <h3>Professional Overview</h3>
-                <br />
 
+            <div class="carousel-item active">
+              <div class="d-flex flex-column align-items-center text-center carousel-content">
+                <img src="images/SRIRAGHAVAN PHOTO WO BG.png" alt="Sriraghavan K" class="profile-photo mb-4" style="width: 120px; height:120px ;border-radius: 50%;" />
+                <h3>About Me</h3>
                 <p>
-                  I am a dedicated web developer currently pursuing a Bachelor
-                  of Engineering in Computer Science and Engineering at Sri
-                  Muthukumaran Institute of Technology, with an expected
-                  graduation in 2025. My passion for technology is evident in my
-                  expertise in <i>HTML, CSS, and JavaScript</i>, and I am
-                  actively expanding my knowledge in backend technologies. My
-                  goal is to become a well-rounded full-stack developer,
-                  combining strong front-end skills with in-depth back-end
-                  expertise.
-                </p>
-                <br /><br /><br />
-                <p>
-                  My enthusiasm for gaming fuels my creativity and enhances my
-                  problem-solving skills. With a solid foundation in both
-                  front-end and back-end technologies, I focus on creating
-                  responsive, user-friendly web applications that deliver
-                  exceptional user experiences. My hands-on experience with
-                  various projects has deepened my understanding of modern web
-                  development practices and honed my ability to tackle complex
-                  challenges. I am committed to continuous learning and staying
-                  at the forefront of the industry.
+                  
+                  Hello! I’m Sriraghavan K, a dedicated web developer with a passion for technology and gaming. I create innovative web solutions and explore new tech. My work combines tech skills with gaming to enhance creativity and problem-solving. Discover my journey and how I use my expertise to build engaging web solutions.
                 </p>
               </div>
             </div>
+            
             <div class="carousel-item">
-              <div
-                class="d-flex flex-column align-items-center text-center carousel-content"
-              >
+              <div class="d-flex flex-column align-items-center text-center carousel-content">
+                <h3>Professional Overview</h3><br>
+                    <ul>
+                      <li>Currently pursuing a Bachelor of Engineering in Computer Science and Engineering at Sri Muthukumaran Institute of Technology (Expected 2025).</li>
+                      <li>Specialize in front-end and back-end technologies, including HTML, CSS, and JavaScript.</li>
+                      <li>Passionate about creating responsive, user-friendly web applications.</li>
+                      <li>Utilize gaming enthusiasm to enhance creativity and problem-solving skills.</li>
+                      <li>Dedicated to continuous learning and staying up-to-date with emerging technologies.</li>
+                    </ul>
+
+      
+              </div>
+            </div>
+            
+            <div class="carousel-item">
+              <div class="d-flex flex-column align-items-center text-center carousel-content">
                 <h3>Education</h3>
-                <br />
                 <ul>
                   <li>Maharishi Vidhya Mandir, Thanjavur, LKG to 1st Grade</li>
                   <li>SGBC Vivekananda Vidhyalaya, Minjur, 2nd to 7th Grade</li>
-                  <li>
-                    RMK Matric Hr Sec School, Kavaraipettai, 8th to 12th Grade
-                  </li>
-                  <li>
-                    Sri Muthukumaran Institute of Technology, Bachelor of
-                    Engineering in Computer Science and Engineering (Expected
-                    2025)
-                  </li>
-                </ul>
-                <br />
-
+                  <li>RMK Matric Hr Sec School, Kavaraipettai, 8th to 12th Grade</li>
+                  <li>Sri Muthukumaran Institute of Technology, B.E. in Computer Science and Engineering (Expected 2025)</li>
+                </ul><br>
                 <p>
-                  My educational journey has equipped me with a robust
-                  understanding of both foundational and advanced computer
-                  science concepts. Through rigorous coursework and hands-on
-                  projects, I have developed a deep grasp of programming
-                  principles, algorithms, and system architecture. This solid
-                  base enables me to tackle complex problems and implement
-                  innovative solutions effectively.
+                  My education has given me a solid grasp of computer science principles and problem-solving skills, preparing me for complex challenges.
                 </p>
               </div>
             </div>
+            
             <div class="carousel-item">
-              <div
-                class="d-flex flex-column align-items-center text-center carousel-content"
-              >
+              <div class="d-flex flex-column align-items-center text-center carousel-content">
                 <h3>Experience</h3>
-                <br />
                 <ul>
                   <li>Devtown, Full Stack Web Developer Course & Internship</li>
                   <li>Smartknower, Web Development Course & Internship</li>
                   <li>Octanet, Web Development Internship (Current)</li>
                   <li>Codsoft, Web Development Internship (Current)</li>
-                </ul>
-                <br /><br />
+                </ul><br>
                 <p>
-                  During my internships, I acquired valuable hands-on experience
-                  in both front-end and back-end development. I engaged in
-                  real-world projects that required designing and implementing
-                  intuitive user interfaces, developing robust server-side
-                  applications, and working collaboratively with teams to
-                  produce high-quality software solutions. This practical
-                  experience honed my technical skills, improved my
-                  problem-solving abilities, and enhanced my capacity to
-                  contribute effectively to diverse development projects.
+                  My internships have provided hands-on experience in both front-end and back-end development, working on real-world projects that enhance my technical and problem-solving skills.
                 </p>
               </div>
             </div>
+            
             <div class="carousel-item">
-              <div
-                class="d-flex flex-column align-items-center text-center carousel-content"
-              >
+              <div class="d-flex flex-column align-items-center text-center carousel-content">
                 <h3>Personal Interests</h3>
-                <br />
                 <ul>
-                  <li>
-                    Gaming: Enthusiastic gamer with a knack for strategy and
-                    problem-solving.
-                  </li>
-                  <li>
-                    Sports: Enjoy cricket, football, and chess, which help
-                    enhance my teamwork and analytical skills.
-                  </li>
-                  <li>
-                    Anime: Passionate about anime, which inspires creativity and
-                    offers relaxation.
-                  </li>
-                  <li>
-                    Spending Time with Friends: Enjoy socializing and spending
-                    quality time with friends.
-                  </li>
-                </ul>
-                <br /><br />
+                  <li>Gaming: Enthusiastic gamer with a talent for strategy and problem-solving.</li>
+                  <li>Sports: Enjoy cricket, football, and chess for teamwork and analytical skills.</li>
+                  <li>Anime: Passionate about anime, which inspires creativity and relaxation.</li>
+                  <li>Time with Friends: Enjoy socializing and spending quality time with friends.</li>
+                </ul><br>
                 <p>
-                  Outside of technology, I am passionate about gaming and
-                  sports. Gaming sharpens my strategic thinking and
-                  problem-solving skills, offering a creative outlet and a way
-                  to tackle complex challenges. Sports like cricket and
-                  football, on the other hand, enhance my teamwork and
-                  collaboration abilities while providing a healthy balance to
-                  my tech-focused lifestyle. Engaging in these activities helps
-                  me stay well-rounded and contributes to my overall personal
-                  and professional development.
+                  Gaming and sports sharpen my strategic thinking and collaboration skills. Anime sparks creativity, and time with friends keeps me well-rounded.
                 </p>
               </div>
             </div>
             <div class="carousel-item">
-              <div
-                class="d-flex flex-column align-items-center text-center carousel-content"
-              >
-                <h3>Future Goals</h3>
-                <p>
-                  Looking ahead, my primary goal is to advance as a full-stack
-                  developer with a robust expertise in C, C++, and Python. I am
-                  dedicated to honing my skills and leveraging these
-                  technologies to tackle complex problems and create innovative
-                  solutions. My ambition is to work with a leading technology
-                  company renowned for its contributions to the industry and
-                  commitment to cutting-edge developments. Companies such as
-                  Google, Microsoft, Amazon, or Apple represent the pinnacle of
-                  technological advancement and innovation, and I am excited
-                  about the prospect of contributing to their groundbreaking
-                  projects.
-                </p>
-                <p>
-                  I envision myself thriving in an environment that challenges
-                  me to continually grow and adapt. I aim to be part of a team
-                  that works on large-scale, impactful projects that address
-                  real-world issues and push the boundaries of what technology
-                  can achieve. Whether it's developing sophisticated software
-                  solutions, improving system architectures, or leading
-                  high-stakes projects, I am excited about the opportunity to
-                  make a significant contribution.
-                </p>
-                <p>
-                  In the long term, I aspire to take on leadership roles where I
-                  can influence strategic decisions, drive innovation, and
-                  mentor the next generation of developers. I am enthusiastic
-                  about exploring new technologies and methodologies that will
-                  shape the future of software development. My goal is to leave
-                  a lasting impact by contributing to transformative projects
-                  and becoming a key player in the tech industry on a global
-                  scale.
-                </p>
+              <div class="d-flex flex-column align-items-center text-center carousel-content">
+                <h3>Future Goals</h3><br>
+                  <ul>
+                    <li>Aim to become a top-tier full-stack developer with expertise in C, C++, and Python.</li>
+                    <li>Aspire to work with leading tech giants such as Google, Microsoft, Amazon, or Apple.</li>
+                    <li>Driven to tackle complex challenges and drive innovation through impactful projects.</li>
+                    <li>Seek to take on leadership roles, shape future technologies, and mentor emerging developers.</li>
+                    <li>Commit to making a significant impact on the tech industry and leaving a lasting legacy.</li>
+                  </ul>
+
+              
               </div>
             </div>
+            
             <div class="carousel-item">
-              <div
-                class="d-flex flex-column align-items-center text-center carousel-content"
-              >
-                <h3>Language Proficiency</h3>
+              <div class="d-flex flex-column align-items-center text-center carousel-content">
+                <h3>Language Proficiency</h3><br>
                 <ul>
-                  <li>
-                    <strong>Tamil:</strong> Fluent in Tamil with strong skills
-                    in reading, writing, and communication. This proficiency
-                    helps me engage effectively in various settings and
-                    collaborate within Tamil-speaking communities.
-                  </li>
-                  <br />
-                  <li>
-                    <strong>English:</strong> Fluent in English, with strong
-                    technical and professional communication skills. This allows
-                    me to excel in international environments, contribute to
-                    global projects, and stay current with industry trends.
-                  </li>
-                  <br />
-                  <li>
-                    <strong>Japanese:</strong> Basic familiarity with Japanese
-                    from watching anime. I am enthusiastic about learning more
-                    to deepen my cultural and linguistic knowledge.
-                  </li>
-                  <br />
-                  <li>
-                    <strong>Future Language Learning:</strong> I am eager to
-                    learn additional languages to enhance my ability to work
-                    globally and connect with diverse teams.
-                  </li>
+                  <li><strong>Tamil:</strong> Fluent in reading, writing, and speaking, with a strong grasp of nuances.</li>
+                  <li><strong>English:</strong> Fluent in professional and technical communication, with advanced writing skills.</li>
+                  <li><strong>Japanese:</strong> Basic knowledge from anime, with a strong interest in further learning.</li>
+                  <li><strong>Future Language Learning:</strong> Open to acquiring additional languages to enhance global communication.</li>
+
                 </ul>
               </div>
             </div>
+            
           </div>
           <a
             class="carousel-control-prev"
@@ -681,21 +584,21 @@
         <div class="row text-center">
           <div class="col-md-3 mb-4">
             <div class="skill-card">
-              <i class="fab fa-html5 fa-4x text-danger"></i>
+              <i class="fab fa-html5 fa-4x text-danger" style="margin-bottom: 15px;"></i>
               <h4 class="mt-2">HTML</h4>
               <p>Expert in creating structured web content using HTML5.</p>
             </div>
           </div>
           <div class="col-md-3 mb-4">
             <div class="skill-card">
-              <i class="fab fa-css3-alt fa-4x text-primary"></i>
-              <h4 class="mt-2">CSS</h4>
+              <i class="fab fa-css3-alt fa-4x text-primary" style="margin-bottom: 15px;"></i>
+              <h4 class="mt-2">CSS/Bootstrap</h4>
               <p>Skilled in designing and styling web pages with CSS3.</p>
             </div>
           </div>
           <div class="col-md-3 mb-4">
             <div class="skill-card">
-              <i class="fab fa-js fa-4x text-warning"></i>
+              <i class="fab fa-js fa-4x text-warning" style="margin-bottom: 15px;"></i>
               <h4 class="mt-2">JavaScript</h4>
               <p>
                 Proficient in creating interactive and dynamic web experiences
@@ -705,48 +608,8 @@
           </div>
           <div class="col-md-3 mb-4">
             <div class="skill-card">
-              <i class="fab fa-node fa-4x text-success"></i>
-              <h4 class="mt-2">Node.js</h4>
-              <p>
-                Experienced in building server-side applications using Node.js.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-3 mb-4">
-            <div class="skill-card">
-              <i class="fas fa-database fa-4x text-info"></i>
-              <h4 class="mt-2">MongoDB</h4>
-              <p>Proficient in handling NoSQL databases with MongoDB.</p>
-            </div>
-          </div>
-          <div class="col-md-3 mb-4">
-            <div class="skill-card">
-              <i class="fab fa-python fa-4x text-primary"></i>
-              <h4 class="mt-2">Python</h4>
-              <p>Experienced in developing applications using Python.</p>
-            </div>
-          </div>
-          <div class="col-md-3 mb-4">
-            <div class="skill-card">
-              <i class="fab fa-java fa-4x text-orange"></i>
-              <h4 class="mt-2">Java</h4>
-              <p>Skilled in object-oriented programming with Java.</p>
-            </div>
-          </div>
-          <div class="col-md-3 mb-4">
-            <div class="skill-card">
-              <i class="fab fa-cuttlefish fa-4x text-info"></i>
-              <h4 class="mt-2">C++</h4>
-              <p>
-                Proficient in programming with C++ for performance-critical
-                applications.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-3 mb-4">
-            <div class="skill-card">
-              <i class="fab fa-react fa-4x text-info"></i>
-              <h4 class="mt-2">React.js</h4>
+              <i class="fab fa-react fa-4x text-info" style="margin-bottom: 15px;"></i>
+              <h4 class="mt-2">ReactJS</h4>
               <p>
                 Experienced in building modern web applications with React.js.
               </p>
@@ -754,17 +617,80 @@
           </div>
           <div class="col-md-3 mb-4">
             <div class="skill-card">
+              <i class="fab fa-node fa-4x text-success" style="margin-bottom: 15px;"></i>
+              <h4 class="mt-2">NodeJS</h4>
+              <p>
+                Experienced in building server-side applications using Node.js.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="skill-card">
               <img
-                src="https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png&color=000000"
+                src="https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png&color=000000" width="90px" height="80px" style="margin-bottom: 5px;"
               />
-              <h4 class="mt-2">Express.js</h4>
+              <h4 class="mt-2">ExpressJS</h4>
               <p>
                 Proficient in creating server-side applications using
                 Express.js.
               </p>
             </div>
           </div>
+        
+          <div class="col-md-3 mb-4">
+            <div class="skill-card">
+              <i class="fas fa-database fa-4x text-info" style="margin-bottom: 15px;"></i>
+              <h4 class="mt-2">MongoDB</h4>
+              <p>Proficient in handling NoSQL databases with MongoDB.</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="skill-card">
+              <i class="fab fa-github" style="margin-bottom: 15px;"></i>
+              <h4 class="mt-2">GitHub</h4>
+              <p>
+                Proficient in C programming for developing efficient algorithms and system-level tasks.
+              </p>
+            </div>
         </div>
+        <div class="col-md-3 mb-4">
+          <div class="skill-card">
+            <img src="https://www.pinclipart.com/picdir/big/396-3965857_c-c-programming-language-logo-clipart.png" width="60.19px" height="70px" style="margin-top: 25px; margin-bottom: 15px; " >
+            <h4 class="mt-2">C</h4>
+            <p>
+              Proficient in C programming for developing efficient algorithms and system-level tasks.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="skill-card">
+            <img src="http://seller.edubull.com/erepository/edubull_meta/228.jpg" width="px" height="70px" style="margin-top: 25px; margin-bottom: 15px;">
+            <h4 class="mt-2">C++</h4>
+            <p>
+              Proficient in programming with C++ for performance-critical
+              applications.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="skill-card">
+            <i class="fab fa-java fa-4x text-orange" style="margin-bottom: 15px;"></i>
+            <h4 class="mt-2">Java</h4>
+            <p>Skilled in object-oriented programming with Java.</p>
+          </div>
+        </div>
+          <div class="col-md-3 mb-4">
+            <div class="skill-card">
+              <i class="fab fa-python fa-4x text-primary" style="margin-bottom: 15px;"></i>
+              <h4 class="mt-2">Python</h4>
+              <p>Experienced in developing applications using Python.</p>
+            </div>
+          </div>
+       
+        
+          
+         
+          
       </div>
     </section>
 
